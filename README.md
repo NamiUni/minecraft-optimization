@@ -22,7 +22,7 @@
 * [Purpur](https://github.com/pl3xgaming/Purpur) - airplaneのフォークで、サーバーのオーナーに機能設定の自由度を与えることを目的としています。
 
 関わらない方がいい:
-* Yatopia - "不安定さと保守性を最大限に高めるために、Paper forksの力を結集しました！！" - [KennyTVの恥リスト](https://github.com/KennyTV/list-of-shame) これ以上、何も言うことはありません。
+* Yatopia - "不安定さと保守性を最大限に高めるために、Paper forksの力を結集しました！！" - [KennyTVの恥リスト](https://github.com/NamiUni/list-of-shame/) これ以上、何も言うことはありません。
 * 非同期を謳っている有料のserver jarは、99.99%の確率で詐欺です。
 * Bukkit/Craftbukkit/Spigot - あなたが利用できる他のサーバーソフトウェアと比較して、パフォーマンスの点で非常に時代遅れです。
 * 実行時にプラグインの有効化/無効化/再読み込みを行うあらゆるプラグイン/ソフトウェア。理由は[このセクション](#他のプラグインを有効無効にするプラグイン)を参照してください。
