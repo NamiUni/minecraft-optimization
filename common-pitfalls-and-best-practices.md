@@ -1,23 +1,23 @@
-# Common pitfalls and best practices
+# よくある落とし穴とベスト・プラクティス
 
-This article aims to explain common pitfalls that server owners face.
+この記事では、サーバーオーナーが直面するよくある落とし穴について説明することを目的としています。
 
-## Always backup
-There are two types of people - those who make backups, and those who will start making backups. It's just a matter of time when you experience data loss. Always make copies to avoid losing your worlds or plugin data. You can apply this to any computer related workflow, not just minecraft.
+## 常にバックアップする
+バックアップを取る人と、これから取る人の2種類がいます。データ消失の経験は時間の問題です。ワールドやプラグインのデータが失われないように、常にコピーを取っておきましょう。これはマインクラフトに限らず、コンピュータ関連のあらゆるワークフローに応用できます。
 
-## Don't use outdated software
-By running outdated software versions you risk players abusing unpatched exploits, including item duplication (infinite items). It also plays in inconvenience factor since your players have to specifically downgrade their client version to match your server. This can be circumvented by using a protocol hack, but it's not ideal.
+## 時代遅れのソフトウェアを使わない
+古いバージョンのソフトウェアを使用することで、プレイヤーがパッチの当たっていないエクスプロイトを悪用する危険性があります。また、プレイヤーはあなたのサーバーに合わせてクライアントのバージョンを下げなければならないため、不便さを感じることになります。これはプロトコルハックで回避することができますが、理想的ではありません。
 
-## Don't run bukkit/spigot anymore
-Bukkit and spigot are basically in maintenence mode. They update anytime there's a new version and if a critical exploit is found, but don't add any performance updates. This means any performance issues you may experience on those softwares will never be improved over time. To avoid that, upgrade to [paper](https://papermc.io/downloads), [tuinity](https://ci.codemc.io/job/Spottedleaf/job/Tuinity) or [purpur](https://purpur.pl3x.net/downloads). Bukkit/Spigot plugins will work just as well (maybe even better) with the server software listed. If they don't, then it's safe to assume that the plugin dev is either doing things that they shouldn't or did a negligent job creating their plugin. They also add optimization patches like a chunk loading system that can take advantage of multiple cpu threads or a setting that allows the server to tick less chunks than it actually sends to the player. See the [main optimization guide](https://github.com/YouHaveTrouble/minecraft-optimization) for more details.
+## bukkit/spigotの動作を停止する
+BukkitとSpigotは、基本的にメインテナンスモードです。新しいバージョンが出たり、重大なエクスプロイトが発見されたりした場合にはアップデートを行いますが、パフォーマンスに関するアップデートは一切行いません。つまり、これらのソフトウェアで経験したパフォーマンスの問題は、時間が経っても改善されないということです。それを避けるためには、[paper](https://papermc.io/downloads)、[tuinity](https://ci.codemc.io/job/Spottedleaf/job/Tuinity)、[purpur](https://purpur.pl3x.net/downloads)にアップグレードしてください。Bukkit/Spigotプラグインは、リストアップされているサーバソフトウェアと同様に（あるいはそれ以上に）動作します。もし動作しない場合は、そのプラグインの開発者がしてはいけないことをしているか、プラグインの作成を怠っていると考えてよいでしょう。また、複数のCPUスレッドを利用できるチャンクローディングシステムや、実際にプレイヤーに送信するチャンク数よりも少ない数のチャンクをサーバーがティックする設定など、最適化のためのパッチも追加されています。詳しくは[main optimization guide](https://github.com/YouHaveTrouble/minecraft-optimization)をご覧ください。
 
-## Avoid shared hosting if possible
-Shared hosts are usually the cheapest option, and that's for a valid reason. They offer you 2 types of resources - guaranteed and shared. Guaranteed resources are usually laughably low and may not be enough to run a server for a few players. Shared resources on the other hand are usually enough to run a server with decent performance. There is a catch, though; shared resources, like the name implies, are shared between your server and other servers on the same physical machine. Your server can only benefit from having them when no other server uses them. The situation where your server fully utilises shared resources is pretty much impossible to happen, as most shared hosts oversell their resources. Like airplane tickets, the hosting site sells more resources than they have available in hopes that not all of them will be used. This often leads to situations where all servers are bogged down because there aren't enough resources to spare.
+## 可能な限り共有ホスティングを避ける
+共有ホストは通常、最も安い選択肢ですが、それには正当な理由があります。このホストは2種類のリソースを提供します - 保証付きと共有です。保証されたリソースは通常、笑えるほど低く、数人のプレイヤーのためのサーバーを運営するには十分ではありません。一方、共有リソースは、通常、そこそこのパフォーマンスでサーバーを運営するのに十分です。共有リソースは、その名の通り、自分のサーバーと同じ物理マシン上の他のサーバーとの間で共有されます。他のサーバーが共有リソースを使用していない場合にのみ、サーバーは共有リソースの恩恵を受けることができます。ほとんどの共有ホストがリソースを過剰に提供しているため、お客様のサーバーが共有リソースを完全に利用するという状況はほとんど起こりません。ホスティングサイトは、航空券のように、利用可能なリソースよりも多くのリソースを販売し、すべてのリソースが使用されないことを期待しています。そのため、リソースが足りずにすべてのサーバーが停止してしまうことがよくあります。
 
-## Avoid datapacks that use command functions
-Datapacks that run commands are extremely laggy. It may not be much with a few players on, but that doesn't scale well with the playercount and will lag your server pretty quickly as you gain players. Datapacks that modify biomes, loot tables, etc are fine. You're better off looking for a plugin alternative.
+## コマンド機能を使用するデータパックを避ける
+コマンドを実行するデータパックは非常にラグが大きいです。数人のプレイヤーではさほど気にならないかもしれませんが、プレイ人数に応じてうまく調整できず、プレイヤーが増えるとすぐにサーバーが遅延してしまいます。バイオームやルートテーブルなどを変更するデータパックは問題ありません。プラグインの代わりになるものを探した方がいいでしょう。
 
-## Choosing hardware
-Don't just go off of how much RAM you need. You should instead focus on what kind of CPU you should use, since the CPU is the most important part of the server. You want something that [ranks good on single core performance](https://www.cpubenchmark.net/singleThread.html), as a server mainly runs on one thread. Multiple threads are utilised for quite some time now in systems like async chunk loading on paper, however.
+## ハードウェアの選択
+必要なRAMの容量だけで判断してはいけません。CPUはサーバーの最も重要な部分なので、どのような種類のCPUを使うべきかに注目すべきです。サーバーは主に1つのスレッドで動作しているので、[シングルコアパフォーマンスに優れたもの](https://www.cpubenchmark.net/singleThread.html)がいいでしょう。しかし、paperの上での非同期チャンクローディングのようなシステムでは、かなり前からマルチスレッドが利用されています。
 
-You should absolutely avoid HDD drives. Their speeds are simply way too slow to justify running a server on them since minecraft is heavy on I/O operations (especially with high view distances and higher player counts).
+HDDドライブは絶対に避けるべきです。マインクラフトはI/O操作が多いので（特に視界距離が長く、プレイヤー数が多い場合）、その速度はサーバーを運営するにはあまりにも遅いのです。
